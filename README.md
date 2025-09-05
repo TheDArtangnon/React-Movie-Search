@@ -67,3 +67,9 @@ export default tseslint.config([
   },
 ])
 ```
+## Live Demo
+https://TheDArtangnon.github.io/React-Movie-Search/
+
+## Run locally
+npm install
+npm run dev
