@@ -8,7 +8,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 jobs:
   build:
@@ -21,11 +21,9 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - name: Add SPA fallback
+      - name: SPA fallback
         run: cp dist/index.html dist/404.html
-      - name: Rewrite asset URLs for Pages
-        run: |
-          find dist -type f \( -name "*.css" -o -name "*.html" \) -exec sed -i 's|/assets/|/React-Movie-Search/assets/|g' {} +
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -38,3 +36,4 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
