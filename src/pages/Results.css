@@ -1,0 +1,31 @@
+.results-root{position:relative;min-height:100vh;background:url("/assets/results.jpg")center center/cover no-repeat fixed;color:#fff}
+.results-header{position:fixed;inset:0 0 auto 0;height:88px;display:grid;grid-template-areas:"back brand search";grid-template-columns:120px minmax(0,1fr) minmax(140px,42vw);align-items:center;padding:0 28px;z-index:10}
+.back-link{grid-area:back;text-decoration:none;font-size:18px;color:#fff}
+.brand{grid-area:brand;justify-self:center;display:inline-flex;align-items:center;gap:14px;font-weight:900;font-size:clamp(28px,4.5vw,56px);letter-spacing:.02em;color:#ff3b1f;-webkit-text-stroke:1px rgba(0,0,0,.7);text-shadow:0 2px 0 rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.55);white-space:nowrap;min-width:0}
+.brand img{height:120px;width:auto;display:block}
+.search-wrap{grid-area:search;justify-self:end}
+.search-box{display:flex;align-items:center;gap:12px;width:min(560px,42vw);padding:12px 14px;background:rgba(0,0,0,.75);border:2px solid #ff3b1f;border-radius:9999px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.45)}
+.search-input{flex:1;height:44px;font-size:22px;color:#ff3b1f;caret-color:#ff3b1f;background:0 0;border:none;outline:0;padding:0 10px;text-align:center;font-family:'Rock Salt',system-ui,Avenir,Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.search-input::placeholder{color:rgba(255,255,255,.9)}
+.search-button{height:44px;padding:0 22px;font-size:18px;font-weight:800;color:#0b0b0b;background:#ff3b1f;border:2px solid #ff3b1f;border-radius:9999px;cursor:pointer;transition:transform 120ms ease,background-color 120ms ease,box-shadow 120ms ease}
+.search-button:hover{background:#ff5438;box-shadow:0 6px 16px rgba(255,84,56,.35);transform:translateY(-1px) scale(1.01)}
+.results-main{padding:110px 24px 28px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px}
+@media (max-width:1200px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.cell{display:flex;flex-direction:column;align-items:center}
+.card{width:100%;max-width:220px;aspect-ratio:2/3;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.75);transform:translateZ(0);transition:transform 160ms ease,box-shadow 160ms ease,border-color 160ms ease}
+.poster{width:100%;height:100%;object-fit:cover;display:block}
+.meta{max-width:260px;text-align:center;margin-top:10px;margin-bottom:4px}
+.title{font-size:20px;font-weight:900;line-height:1.1}
+.year{font-size:16px;opacity:.9}
+.card .poster{border:2px solid rgba(229,9,20,.85)}
+.card:hover .poster{transform:scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,.8);border-color:#ff2a33}
+.title,.year{color:#e50914;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+@media (max-width:900px){
+  .results-header{grid-template-areas:"back brand" "search search";grid-template-columns:120px 1fr;row-gap:10px;height:auto;padding:8px 20px}
+  .search-wrap{justify-self:center}
+  .search-box{width:min(560px,92vw)}
+  .results-main{padding:170px 24px 28px}
+}
+
